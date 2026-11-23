@@ -1,0 +1,217 @@
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make -C /root/kernel-source/build/ksu-32915384-49 KBUILD_SRC=/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 \
+-f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/Makefile dtbs
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+set -e; : '  CHK     include/config/kernel.release'; mkdir -p include/config/; 	echo "4.9.205$(/bin/bash /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/setlocalversion /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15)" < include/config/auto.conf > include/config/kernel.release.tmp; if [ -r include/config/kernel.release ] && cmp -s include/config/kernel.release include/config/kernel.release.tmp; then rm -f include/config/kernel.release.tmp; else : '  UPD     include/config/kernel.release'; mv -f include/config/kernel.release.tmp include/config/kernel.release; fi
+ln -fsn /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 source
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.asm-generic \
+            src=asm obj=arch/arm64/include/generated/asm
+/bin/bash /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/mkmakefile \
+    /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 . 4 9
+  GEN     ./Makefile
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.asm-generic \
+            src=uapi/asm obj=arch/arm64/include/generated/uapi/asm
+set -e; : '  CHK     include/generated/uapi/linux/version.h'; mkdir -p include/generated/uapi/linux/; 	(echo \#define LINUX_VERSION_CODE 264653; echo '#define KERNEL_VERSION(a,b,c) (((a) << 16) + ((b) << 8) + (c))';) < /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/Makefile > include/generated/uapi/linux/version.h.tmp; if [ -r include/generated/uapi/linux/version.h ] && cmp -s include/generated/uapi/linux/version.h include/generated/uapi/linux/version.h.tmp; then rm -f include/generated/uapi/linux/version.h.tmp; else : '  UPD     include/generated/uapi/linux/version.h'; mv -f include/generated/uapi/linux/version.h.tmp include/generated/uapi/linux/version.h; fi
+rm -f include/linux/version.h
+set -e; : '  CHK     include/generated/utsrelease.h'; mkdir -p include/generated/; 	if [ `echo -n "4.9.205-LotusKernel-OSS" | wc -c ` -gt 64 ]; then echo '"4.9.205-LotusKernel-OSS" exceeds 64 characters' >&2; exit 1; fi; (echo \#define UTS_RELEASE \"4.9.205-LotusKernel-OSS\";) < include/config/kernel.release > include/generated/utsrelease.h.tmp; if [ -r include/generated/utsrelease.h ] && cmp -s include/generated/utsrelease.h include/generated/utsrelease.h.tmp; then rm -f include/generated/utsrelease.h.tmp; else : '  UPD     include/generated/utsrelease.h'; mv -f include/generated/utsrelease.h.tmp include/generated/utsrelease.h; fi
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts/basic
+rm -f .tmp_quiet_recordmcount
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts
+if [ -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/.config -o -d /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/config ]; then \
+	echo >&2 "  /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 is not clean, please run 'make mrproper'"; \
+	echo >&2 "  in the '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15' directory.";\
+	/bin/false; \
+fi;
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts/dtc
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts/genksyms
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts/mod
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts/selinux
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts/selinux/genheaders
+set -e; : '  CHK     scripts/mod/devicetable-offsets.h'; mkdir -p scripts/mod/; 	(set -e; echo "#ifndef __DEVICETABLE_OFFSETS_H__"; echo "#define __DEVICETABLE_OFFSETS_H__"; echo "/*"; echo " * DO NOT MODIFY."; echo " *"; echo " * This file was generated by Kbuild"; echo " */"; echo ""; sed -ne 	's:^[[:space:]]*\.ascii[[:space:]]*"\(.*\)".*:\1:; /^->/{s:->#\(.*\):/* \1 */:; s:^->\([^ ]*\) [\$#]*\([^ ]*\) \(.*\):#define \1 \2 /* \3 */:; s:->::; p;}'; echo ""; echo "#endif" ) < scripts/mod/devicetable-offsets.s > scripts/mod/devicetable-offsets.h.tmp; if [ -r scripts/mod/devicetable-offsets.h ] && cmp -s scripts/mod/devicetable-offsets.h scripts/mod/devicetable-offsets.h.tmp; then rm -f scripts/mod/devicetable-offsets.h.tmp; else : '  UPD     scripts/mod/devicetable-offsets.h'; mv -f scripts/mod/devicetable-offsets.h.tmp scripts/mod/devicetable-offsets.h; fi
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=scripts/selinux/mdp
+mkdir -p .tmp_versions 
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=arch/arm64/boot/dts arch/arm64/boot/dts/mediatek/mt6765.dtb
+make -f /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build obj=arch/arm64/boot/dts arch/arm64/boot/dts/mediatek/certus.dtb
+  mkdir -p arch/arm64/boot/dts/mediatek/ ; clang-13 -E -Wp,-MD,arch/arm64/boot/dts/mediatek/.mt6765.dtb.d.pre.tmp -nostdinc -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts/include -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/drivers/of/testcase-data -I./include/ -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include -Iarch/arm64/boot/dts -undef -D__DTS__ -x assembler-with-cpp -o arch/arm64/boot/dts/mediatek/.mt6765.dtb.dts.tmp /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts/mediatek/mt6765.dts ; /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay -@ -O dtb -o arch/arm64/boot/dts/mediatek/mt6765.dtb -b 0 -i /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts/mediatek/ -q -Wno-unit_address_vs_reg -d arch/arm64/boot/dts/mediatek/.mt6765.dtb.d.dtc.tmp arch/arm64/boot/dts/mediatek/.mt6765.dtb.dts.tmp ; cat arch/arm64/boot/dts/mediatek/.mt6765.dtb.d.pre.tmp arch/arm64/boot/dts/mediatek/.mt6765.dtb.d.dtc.tmp > arch/arm64/boot/dts/mediatek/.mt6765.dtb.d
+  mkdir -p arch/arm64/boot/dts/mediatek/ ; clang-13 -E -Wp,-MD,arch/arm64/boot/dts/mediatek/.certus.dtb.d.pre.tmp -nostdinc -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts/include -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/drivers/of/testcase-data -I./include/ -I/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include -Iarch/arm64/boot/dts -undef -D__DTS__ -x assembler-with-cpp -o arch/arm64/boot/dts/mediatek/.certus.dtb.dts.tmp /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts/mediatek/certus.dts ; /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay -@ -O dtb -o arch/arm64/boot/dts/mediatek/certus.dtb -b 0 -i /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/boot/dts/mediatek/ -q -Wno-unit_address_vs_reg -d arch/arm64/boot/dts/mediatek/.certus.dtb.d.dtc.tmp arch/arm64/boot/dts/mediatek/.certus.dtb.dts.tmp ; cat arch/arm64/boot/dts/mediatek/.certus.dtb.d.pre.tmp arch/arm64/boot/dts/mediatek/.certus.dtb.d.dtc.tmp > arch/arm64/boot/dts/mediatek/.certus.dtb.d
+/bin/sh: 1: /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay: Permission denied
+make[2]: *** [scripts/Makefile.lib:319: arch/arm64/boot/dts/mediatek/mt6765.dtb] Error 126
+make[1]: *** [arch/arm64/Makefile:192: mediatek/mt6765.dtb] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/bin/sh: 1: /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay: Permission denied
+make[2]: *** [scripts/Makefile.lib:319: arch/arm64/boot/dts/mediatek/certus.dtb] Error 126
+make[1]: *** [arch/arm64/Makefile:192: mediatek/certus.dtb] Error 2
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  Using /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 as source for kernel
+  CHK     scripts/mod/devicetable-offsets.h
+  DTC     arch/arm64/boot/dts/mediatek/mt6765.dtb
+  DTC     arch/arm64/boot/dts/mediatek/certus.dtb
+/bin/sh: 1: /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay: Exec format error
+make[2]: *** [scripts/Makefile.lib:319: arch/arm64/boot/dts/mediatek/mt6765.dtb] Error 126
+make[1]: *** [arch/arm64/Makefile:192: mediatek/mt6765.dtb] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/bin/sh: 1: /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay: Exec format error
+make[2]: *** [scripts/Makefile.lib:319: arch/arm64/boot/dts/mediatek/certus.dtb] Error 126
+make[1]: *** [arch/arm64/Makefile:192: mediatek/certus.dtb] Error 2
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+arch/arm64/Makefile:67: *** CROSS_COMPILE_ARM32 not defined or empty, the compat vDSO will not be built.  Stop.
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+make[1]: Nothing to be done for 'scripts/dtc'.
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  Using /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 as source for kernel
+  CHK     scripts/mod/devicetable-offsets.h
+  DTC     arch/arm64/boot/dts/mediatek/mt6765.dtb
+  DTC     arch/arm64/boot/dts/mediatek/certus.dtb
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay: invalid option -- '@'
+Usage: dtc [options] <input file>
+
+Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+  -q, --quiet                
+	Quiet: -q suppress warnings, -qq errors, -qqq all
+  -I, --in-format <arg>      
+	Input formats are:
+		dts - device tree source text
+		dtb - device tree blob
+		fs  - /proc/device-tree style directory
+  -o, --out <arg>            
+	Output file
+  -O, --out-format <arg>     
+	Output formats are:
+		dts - device tree source text
+		dtb - device tree blob
+		asm - assembler source
+  -V, --out-version <arg>    
+	Blob version to produce, defaults to 17 (for dtb and asm output)
+  -d, --out-dependency <arg> 
+	Output dependency file
+  -R, --reserve <arg>        
+	Make space for <number> reserve map entries (for dtb and asm output)
+  -S, --space <arg>          
+	Make the blob at least <bytes> long (extra space)
+  -p, --pad <arg>            
+	Add padding to the blob of <bytes> long (extra space)
+  -b, --boot-cpu <arg>       
+	Set the physical boot cpu
+  -f, --force                
+	Try to produce output even if the input tree has errors
+  -i, --include <arg>        
+	Add a path to search for include files
+  -s, --sort                 
+	Sort nodes and properties before outputting (useful for comparing trees)
+  -H, --phandle <arg>        
+	Valid phandle formats are:
+		legacy - "linux,phandle" properties only
+		epapr  - "phandle" properties only
+		both   - Both "linux,phandle" and "phandle" properties
+  -W, --warning <arg>        
+	Enable/disable warnings (prefix with "no-")
+  -E, --error <arg>          
+	Enable/disable errors (prefix with "no-")
+  -h, --help                 
+	Print this help and exit
+  -v, --version              
+	Print version and exit
+
+Error: unknown option
+make[2]: *** [scripts/Makefile.lib:319: arch/arm64/boot/dts/mediatek/mt6765.dtb] Error 1
+make[1]: *** [arch/arm64/Makefile:192: mediatek/mt6765.dtb] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/dtc_overlay: invalid option -- '@'
+Usage: dtc [options] <input file>
+
+Options: -[qI:O:o:V:d:R:S:p:fb:i:H:sW:E:hv]
+  -q, --quiet                
+	Quiet: -q suppress warnings, -qq errors, -qqq all
+  -I, --in-format <arg>      
+	Input formats are:
+		dts - device tree source text
+		dtb - device tree blob
+		fs  - /proc/device-tree style directory
+  -o, --out <arg>            
+	Output file
+  -O, --out-format <arg>     
+	Output formats are:
+		dts - device tree source text
+		dtb - device tree blob
+		asm - assembler source
+  -V, --out-version <arg>    
+	Blob version to produce, defaults to 17 (for dtb and asm output)
+  -d, --out-dependency <arg> 
+	Output dependency file
+  -R, --reserve <arg>        
+	Make space for <number> reserve map entries (for dtb and asm output)
+  -S, --space <arg>          
+	Make the blob at least <bytes> long (extra space)
+  -p, --pad <arg>            
+	Add padding to the blob of <bytes> long (extra space)
+  -b, --boot-cpu <arg>       
+	Set the physical boot cpu
+  -f, --force                
+	Try to produce output even if the input tree has errors
+  -i, --include <arg>        
+	Add a path to search for include files
+  -s, --sort                 
+	Sort nodes and properties before outputting (useful for comparing trees)
+  -H, --phandle <arg>        
+	Valid phandle formats are:
+		legacy - "linux,phandle" properties only
+		epapr  - "phandle" properties only
+		both   - Both "linux,phandle" and "phandle" properties
+  -W, --warning <arg>        
+	Enable/disable warnings (prefix with "no-")
+  -E, --error <arg>          
+	Enable/disable errors (prefix with "no-")
+  -h, --help                 
+	Print this help and exit
+  -v, --version              
+	Print version and exit
+
+Error: unknown option
+make[2]: *** [scripts/Makefile.lib:319: arch/arm64/boot/dts/mediatek/certus.dtb] Error 1
+make[1]: *** [arch/arm64/Makefile:192: mediatek/certus.dtb] Error 2
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  Using /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 as source for kernel
+  CHK     scripts/mod/devicetable-offsets.h
+  DTC     arch/arm64/boot/dts/mediatek/mt6765.dtb
+  DTC     arch/arm64/boot/dts/mediatek/certus.dtb
+/bin/sh: 2: /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/dtc/ufdt_apply_overlay: Permission denied
+make[1]: *** [/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/drvgen/drvgen.mk:75: dtbo_check] Error 126
+make[1]: *** Waiting for unfinished jobs....
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/checksyscalls.sh
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'

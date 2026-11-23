@@ -1,0 +1,72 @@
+
+PREBUILD READINESS REPORT
+=========================
+
+PROJECT
+-------
+Device          : Xiaomi Redmi 6A
+Codename        : certus / lotus
+SoC             : MediaTek MT6765
+Architecture    : ARM64
+Kernel          : Linux 4.9.205
+Localversion    : -LotusKernel-OSS
+
+RUNTIME
+-------
+Kernel release  : 4.9.205-LotusKernel-OSS-g999999442b8e
+Device model    : MT6762V/CN
+Compatible      : mediatek,MT6765
+Compiler record : Proton Clang 13.0.0
+Build date      : 2024-04-16
+
+SOURCE AUDIT
+------------
+Source ZIP CRC          : PASS
+Flashable ZIP CRC       : PASS
+Extracted symlinks      : PASS
+Kernel core files       : 12/12 FOUND
+Device Tree files       : 70 FOUND
+Certus DTS includes     : 6/6 FOUND
+
+CONFIGURATION AUDIT
+-------------------
+Project identity        : MATCH
+KALLSYMS_ALL            : MATCH
+KPROBES                 : MATCH
+LOCALVERSION            : MATCH
+DT overlay              : MATCH
+
+TOOLCHAIN INVENTORY
+-------------------
+GCC                     : 12.2.0
+Clang                   : 13.0.1
+LLD                     : 13.0.1
+GNU Make                : 4.3
+Python                  : 3.11.2
+Bison                   : 3.8.2
+Flex                    : 2.6.4
+DTC                     : 1.6.1
+Pahole                  : 1.24
+OpenSSL                 : 3.0.22
+
+ARTIFACTS
+---------
+Source baseline         : FOUND
+Runtime baseline        : FOUND
+Boot image              : FOUND
+Flashable ZIP           : FOUND
+
+LIMITATIONS
+-----------
+Generic clang command   : NOT FOUND
+Runtime config endpoint : NOT AVAILABLE
+Build execution         : NOT PERFORMED
+Kernel compatibility   : NOT PROVEN
+Boot image modification : NOT PERFORMED
+
+FINAL STATUS
+------------
+Source inventory        : AUDITED
+Runtime identity        : AUDITED
+Toolchain inventory     : AUDITED
+Build readiness         : NOT YET VERIFIED

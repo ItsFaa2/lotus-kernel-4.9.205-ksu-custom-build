@@ -1,0 +1,65 @@
+REDMI 6A / MT6765 KERNEL PROJECT
+FINAL READ-ONLY AUDIT REPORT
+================================
+
+[PLATFORM]
+Device       : Xiaomi Redmi 6A
+Codename     : certus / lotus
+Architecture : ARM64
+Kernel       : Linux 4.9.205
+Kernel line  : Legacy 4.9
+
+[SOURCE]
+Repository:
+https://github.com/xiaomi-mt6765-devs/android_kernel_xiaomi_mt6765
+
+Source audit:
+PASS
+
+[CONFIGURATION EVIDENCE]
+CONFIG_MODULES          : y
+CONFIG_MODULE_UNLOAD    : y
+CONFIG_MODVERSIONS      : y
+CONFIG_KALLSYMS         : y
+CONFIG_KALLSYMS_ALL     : y
+CONFIG_KPROBES          : y
+CONFIG_SECURITY         : y
+CONFIG_SECURITY_SELINUX : y
+CONFIG_IKCONFIG         : y
+
+Evidence:
+ /root/lotus-running.config
+
+[PROJECT ARTIFACTS]
+Project baseline       : FOUND
+Runtime baseline       : FOUND
+Readiness report       : FOUND
+Boot image             : FOUND
+Source archive         : FOUND
+Flashable archive      : FOUND
+
+[INTEGRITY]
+Source ZIP             : PASS
+Flashable ZIP          : PASS
+Source symlinks        : PASS
+Extracted source       : PASS
+Final project audit    : PASS
+
+[DOCUMENTATION]
+Audit index            : FOUND
+Legacy JSON            : VALID
+Compatibility report   : FOUND
+Document consistency   : PASS
+
+[LIMITATIONS]
+No successful kernel build has been established.
+No external feature compatibility has been established.
+No device boot compatibility has been established.
+No modified boot image has been validated.
+
+[SCOPE]
+Read-only source, configuration, artifact,
+integrity, and documentation audits.
+
+================================
+END OF REPORT

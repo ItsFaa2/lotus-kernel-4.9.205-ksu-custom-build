@@ -1,0 +1,27 @@
+FAA KSU COMPILE PROBE
+timestamp=2026-11-18T05:20:21.100357
+source=/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15
+build=/root/kernel-source/build/ksu-32915384-49
+target=drivers/kernelsu/kernelsu.o
+
+COMMAND:
+make -C /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 O=/root/kernel-source/build/ksu-32915384-49 ARCH=arm64 LLVM=1 LLVM_IAS=1 drivers/kernelsu/kernelsu.o
+
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  HOSTCC  scripts/basic/fixdep
+  GEN     ./Makefile
+  HOSTCC  scripts/kconfig/conf.o
+  SHIPPED scripts/kconfig/zconf.tab.c
+  SHIPPED scripts/kconfig/zconf.lex.c
+  SHIPPED scripts/kconfig/zconf.hash.c
+  HOSTCC  scripts/kconfig/zconf.tab.o
+  HOSTLD  scripts/kconfig/conf
+scripts/kconfig/conf  --silentoldconfig Kconfig
+/bin/sh: 1: /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/ld-version.sh: Permission denied
+arch/arm64/Makefile:67: *** CROSS_COMPILE_ARM32 not defined or empty, the compat vDSO will not be built.  Stop.
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+
+EXIT_CODE=2

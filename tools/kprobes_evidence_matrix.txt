@@ -1,0 +1,29 @@
+KPROBES EVIDENCE MATRIX
+Device       : Xiaomi Redmi 6A (certus/lotus)
+Architecture : ARM64
+Kernel       : Linux 4.9.205
+
+[VERIFIED]
+CONFIG_MODULES=y
+CONFIG_KPROBES=y
+CONFIG_HAVE_KPROBES=y
+ARM64 Kconfig selects HAVE_KPROBES
+ARM64 Kprobes implementation exists
+ARM64 Kprobes trampoline assembly exists
+Generic Kprobes core exists
+Kprobes public API declarations exist
+register_kprobe() declaration exists
+unregister_kprobe() declaration exists
+
+[UNKNOWN / NOT VERIFIED]
+CONFIG_KPROBE_EVENTS effective value
+Kprobes runtime behavior
+Kprobes reliability under device workload
+KernelSU compatibility
+Successful kernel build
+Boot compatibility of any modified image
+
+[CONCLUSION]
+Source-level ARM64 Kprobes support: VERIFIED
+Runtime Kprobes operation: NOT VERIFIED
+KernelSU compatibility: NOT ESTABLISHED

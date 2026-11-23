@@ -1,0 +1,19 @@
+{
+  "kernel_version": "4.9.205",
+  "config": {
+    "CONFIG_ARM64": "y",
+    "CONFIG_MODULES": "y",
+    "CONFIG_MODULE_UNLOAD": "y",
+    "CONFIG_MODVERSIONS": "y",
+    "CONFIG_MODULE_SIG": "not set",
+    "CONFIG_KALLSYMS": "y",
+    "CONFIG_KALLSYMS_ALL": "y",
+    "CONFIG_KPROBES": "y",
+    "CONFIG_IKCONFIG": "y",
+    "CONFIG_SECURITY": "y",
+    "CONFIG_SECURITY_SELINUX": "y",
+    "CONFIG_DEBUG_INFO": "y"
+  },
+  "source": "/root/kernel-source/work/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15",
+  "audit_type": "read_only"
+}

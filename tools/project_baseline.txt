@@ -1,0 +1,37 @@
+PROJECT BASELINE
+================
+
+Device       : Xiaomi Redmi 6A
+Codename     : certus / lotus
+SoC          : MediaTek MT6765
+Architecture : ARM64
+Kernel       : Linux 4.9.205
+Localversion : -LotusKernel-OSS
+
+SOURCE AUDIT
+============
+Source archive CRC : PASS
+Flashable ZIP CRC  : PASS
+Extracted symlinks : PASS
+Kernel core files  : 12/12 FOUND
+Device Tree files  : 70 FOUND
+Certus DTS includes: 6/6 FOUND
+
+CONFIGURATION
+=============
+Project identity : MATCH
+KALLSYMS_ALL     : MATCH
+KPROBES          : MATCH
+LOCALVERSION     : MATCH
+DT overlay       : MATCH
+
+BOOT IMAGE
+==========
+File             : boot-lotus.img
+Size             : 33554432 bytes
+SHA256           : 07e9b51952308d9a7be4b23b4c761c6c111728f6e434c3a36ca7be8664dfc136
+
+STATUS
+======
+Read-only inventory and consistency checks completed.
+No kernel or boot image modifications performed.

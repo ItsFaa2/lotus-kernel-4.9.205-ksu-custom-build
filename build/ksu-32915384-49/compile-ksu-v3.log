@@ -1,0 +1,32 @@
+FAA KSU COMPILE PROBE V3
+timestamp=2026-11-18T05:23:41.103299
+source=/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15
+build=/root/kernel-source/build/ksu-32915384-49
+
+
+=== STEP 1: KCONFIG PREPARATION ===
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  HOSTCC  scripts/basic/fixdep
+  HOSTCC  scripts/basic/bin2c
+  GEN     ./Makefile
+scripts/kconfig/conf  --olddefconfig Kconfig
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+
+olddefconfig EXIT=0
+
+=== STEP 2: KSU OBJECT COMPILE ===
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+make[1]: *** No rule to make target 'drivers/kernelsu/kernelsu.o'.  Stop.
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+
+compile EXIT=2

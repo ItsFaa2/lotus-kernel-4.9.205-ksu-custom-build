@@ -1,0 +1,26 @@
+
+RUNNING KERNEL BASELINE
+=======================
+
+Kernel release : 4.9.205-LotusKernel-OSS-g999999442b8e
+Architecture   : aarch64
+Compiler       : Proton clang 13.0.0
+Build host     : hadenix@linux
+Build date     : Tue Apr 16 21:51:39 +03 2024
+
+DEVICE TREE
+===========
+Model      : MT6762V/CN
+Compatible : mediatek,MT6765
+
+KERNEL CONFIG
+=============
+Runtime config : Not available through /proc/config.gz
+Previously captured config : /root/lotus-running.config
+
+AUDIT STATUS
+============
+Runtime identity : CONFIRMED
+Architecture     : CONFIRMED
+Kernel version   : CONFIRMED
+Device compatible: CONFIRMED

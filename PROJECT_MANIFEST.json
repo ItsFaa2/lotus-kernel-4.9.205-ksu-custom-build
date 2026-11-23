@@ -1,0 +1,39 @@
+{
+  "project": "Redmi 6A MT6765 Lotus Kernel Audit",
+  "kernel": "Linux 4.9.205",
+  "generated_utc": "2026-11-17T12:09:25.887462+00:00",
+  "scope": "read-only audit",
+  "artifacts": [
+    {
+      "filename": "boot-lotus.img",
+      "size_bytes": 33554432,
+      "sha256": "07e9b51952308d9a7be4b23b4c761c6c111728f6e434c3a36ca7be8664dfc136"
+    },
+    {
+      "filename": "android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15.zip",
+      "size_bytes": 219018760,
+      "sha256": "d6a839f94d4c4d67c1461b5371ad94a97f48698431daedac2bc0a77aebab2a9b"
+    },
+    {
+      "filename": "lotus-4.9.205_oss-certus-arm64-20240419-15.zip",
+      "size_bytes": 12497755,
+      "sha256": "9fe99939ba92a969fc0b2de0de5e84e1bdbf836b82f660407f56977c1053fec3"
+    },
+    {
+      "filename": "kernel_audit_bundle.zip",
+      "size_bytes": 5913,
+      "sha256": "fb4a06379190368f351d23d06d5db455a0ad1584302fdf2a39bcfd49bfaa24e3"
+    },
+    {
+      "filename": "kernel_audit_bundle.zip.sha256",
+      "size_bytes": 90,
+      "sha256": "f3073bf2e98c5eae03767bc6fdfa2bdd14d116e2a1171f844d3f19ccb4eaa5d5"
+    }
+  ],
+  "compatibility": {
+    "kernelsu": "not established",
+    "kprobes_runtime": "not verified",
+    "kernel_build": "not tested",
+    "modified_boot": "not tested"
+  }
+}

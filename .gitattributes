@@ -1,0 +1,2 @@
+build/ksu-32915384-49/vmlinux filter=lfs diff=lfs merge=lfs -text
+*.zip filter=lfs diff=lfs merge=lfs -text

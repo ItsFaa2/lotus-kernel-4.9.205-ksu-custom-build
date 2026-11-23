@@ -1,0 +1,1 @@
+f1c091862469aa858881a5c52e68fe8164b61ad62a20df6a929641576cf4c12b  /root/kernel-source/final-backup/boot-folk-ksu.img

@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+import subprocess
+import sys
+import os
+
+ROOT = Path("/root/kernel-source")
+
+SRC = ROOT / (
+    "work/kernel-4.9.205/"
+    "android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15"
+)
+
+BUILD = ROOT / "build/ksu-32915384-49"
+
+JOBS = "2"
+
+print("=" * 80)
+print("FAA KERNEL 4.9.205 KSU FULL VMLINUX BUILD V2")
+print("=" * 80)
+
+# ----------------------------------------------------------------------
+# STEP 1: Validate executable helper scripts.
+# ----------------------------------------------------------------------
+
+print("\n=== STEP 1: EXECUTABLE SCRIPT VALIDATION ===")
+
+scripts = [
+    SRC / "scripts/ld-version.sh",
+    SRC / "arch/arm64/kernel/vdso/gen_vdso_offsets.sh",
+]
+
+for p in scripts:
+    if not p.exists():
+        print("MISSING:", p)
+        sys.exit(1)
+
+    mode = p.stat().st_mode & 0o777
+
+    if not (mode & 0o111):
+        print("FIXING:", p, oct(mode), "-> 0o755")
+        p.chmod(0o755)
+
+    print(p)
+    print("  mode:", oct(p.stat().st_mode & 0o777))
+
+# ----------------------------------------------------------------------
+# STEP 2: Validate KSU configuration.
+# ----------------------------------------------------------------------
+
+print("\n=== STEP 2: KSU CONFIG ===")
+
+config = BUILD / ".config"
+
+if not config.exists():
+    print("ERROR: .config missing:", config)
+    sys.exit(1)
+
+cfg = config.read_text(errors="replace")
+
+required = {
+    "CONFIG_KSU": "CONFIG_KSU=y",
+    "CONFIG_MODULES": "CONFIG_MODULES=y",
+    "CONFIG_KPROBES": "CONFIG_KPROBES=y",
+    "CONFIG_OVERLAY_FS": "CONFIG_OVERLAY_FS=y",
+}
+
+for name, line in required.items():
+    if line not in cfg:
+        print("MISSING:", line)
+        sys.exit(1)
+    print("OK:", line)
+
+# ----------------------------------------------------------------------
+# STEP 3: Validate VDSO generated header.
+# ----------------------------------------------------------------------
+
+print("\n=== STEP 3: VDSO OFFSET HEADER ===")
+
+vdso_hdr = BUILD / "include/generated/vdso-offsets.h"
+
+if not vdso_hdr.exists():
+    print("ERROR: VDSO header missing")
+    sys.exit(1)
+
+vdso_text = vdso_hdr.read_text(errors="replace")
+
+print(vdso_text, end="")
+
+if "vdso_offset_sigtramp" not in vdso_text:
+    print("ERROR: vdso_offset_sigtramp missing")
+    sys.exit(1)
+
+print("VDSO OFFSET: VALID")
+
+# ----------------------------------------------------------------------
+# STEP 4: Validate VDSO ELF.
+# ----------------------------------------------------------------------
+
+print("\n=== STEP 4: VDSO ELF ===")
+
+vdso = BUILD / "arch/arm64/kernel/vdso/vdso.so.dbg"
+
+if not vdso.exists():
+    print("ERROR: vdso.so.dbg missing")
+    sys.exit(1)
+
+print("SIZE:", vdso.stat().st_size)
+
+p = subprocess.run(
+    ["llvm-nm-13", "-a", str(vdso)],
+    text=True,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.STDOUT,
+)
+
+if "VDSO_sigtramp" not in p.stdout:
+    print("ERROR: VDSO_sigtramp missing from ELF")
+    sys.exit(1)
+
+print("VDSO_sigtramp: PRESENT")
+
+# ----------------------------------------------------------------------
+# STEP 5: Full kernel build.
+# ----------------------------------------------------------------------
+
+print("\n=== STEP 5: FULL VMLINUX BUILD ===")
+
+cmd = [
+    "make",
+    "-C", str(SRC),
+    f"O={BUILD}",
+    "ARCH=arm64",
+f"-j{JOBS}",
+    "vmlinux",
+]
+
+print("\n$ " + " ".join(cmd))
+print()
+
+env = os.environ.copy()
+env.update({
+    "LLVM": "1",
+    "LLVM_IAS": "1",
+    "CC": "clang-13",
+    "LD": "ld.lld-13",
+    "AR": "llvm-ar-13",
+    "NM": "llvm-nm-13",
+    "OBJCOPY": "llvm-objcopy-13",
+    "OBJDUMP": "llvm-objdump-13",
+    "STRIP": "llvm-strip-13",
+    "CROSS_COMPILE_ARM32": "arm-linux-gnueabihf-",
+})
+
+proc = subprocess.run(cmd, env=env)
+
+print("\nBUILD EXIT CODE:", proc.returncode)
+
+if proc.returncode != 0:
+    print("\nBUILD FAILED")
+    sys.exit(proc.returncode)
+
+# ----------------------------------------------------------------------
+# STEP 6: Validate vmlinux.
+# ----------------------------------------------------------------------
+
+print("\n=== STEP 6: VMLINUX VALIDATION ===")
+
+vmlinux = BUILD / "vmlinux"
+
+if not vmlinux.exists():
+    print("ERROR: vmlinux not produced")
+    sys.exit(1)
+
+size = vmlinux.stat().st_size
+
+if size == 0:
+    print("ERROR: vmlinux is empty")
+    sys.exit(1)
+
+print("PATH :", vmlinux)
+print("SIZE :", size, "bytes")
+
+p = subprocess.run(
+    ["file", str(vmlinux)],
+    text=True,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.STDOUT,
+)
+
+print(p.stdout)
+
+print("\n" + "=" * 80)
+print("SUCCESS: FULL VMLINUX BUILD COMPLETE")
+print("=" * 80)

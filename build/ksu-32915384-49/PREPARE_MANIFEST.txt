@@ -1,0 +1,9 @@
+FAA KSU BUILD PREPARATION
+timestamp=20261118-051740
+kernel_source=/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15
+build_tree=/root/kernel-source/build/ksu-32915384-49
+config_source=/root/kernel-source/build/recon-device-config.gz
+kernel_version=4.9.205
+ksu_commit=3291538446b7fccec46fa52775e6bf594c77b9f4
+CONFIG_KSU=y
+CONFIG_KSU_DEBUG=n

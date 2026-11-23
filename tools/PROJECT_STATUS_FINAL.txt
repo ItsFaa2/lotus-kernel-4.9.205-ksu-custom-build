@@ -1,0 +1,44 @@
+PROJECT STATUS FINAL
+====================
+
+DEVICE
+------
+Xiaomi Redmi 6A
+Platform       : MediaTek MT6765
+Codename       : certus / lotus
+Architecture   : ARM64
+Running kernel : Linux 4.9.205
+
+AUDIT RESULTS
+-------------
+Source integrity             : PASS
+Extracted source audit       : PASS
+Symlink validation           : PASS
+Device Tree audit            : PASS
+Runtime configuration audit : PASS
+ARM64 Kprobes source audit   : PASS
+Documentation validation    : PASS (8/8)
+Audit ZIP CRC                : PASS
+Audit ZIP SHA256             : VERIFIED
+
+COMPATIBILITY STATUS
+--------------------
+KernelSU compatibility      : NOT ESTABLISHED
+Kprobes runtime reliability : NOT VERIFIED
+Successful kernel build     : NOT TESTED
+Modified boot compatibility : NOT TESTED
+
+ARTIFACT
+--------
+/root/kernel-source/kernel_audit_bundle.zip
+SHA256:
+fb4a06379190368f351d23d06d5db455a0ad1584302fdf2a39bcfd49bfaa24e3
+
+FINAL CONCLUSION
+----------------
+Read-only source and documentation audit completed.
+No successful build, KernelSU integration, or modified boot
+image has been validated.
+
+This report records verified evidence and explicitly
+preserves unknown or untested conditions.

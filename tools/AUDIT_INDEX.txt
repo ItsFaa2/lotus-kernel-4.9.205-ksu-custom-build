@@ -1,0 +1,43 @@
+REDMI 6A KERNEL PROJECT
+AUDIT DOCUMENT INDEX
+====================
+
+1. project_baseline.txt
+   Status: PRESENT
+   Purpose: Project artifact baseline
+
+2. runtime_baseline.txt
+   Status: PRESENT
+   Purpose: Running device baseline
+
+3. prebuild_readiness.txt
+   Status: PRESENT
+   Purpose: Environment and dependency inventory
+
+4. kernelsu_compatibility_assessment.txt
+   Status: PRESENT
+   Purpose: Runtime configuration and source evidence
+
+5. legacy_audit.json
+   Status: VALID JSON
+   Purpose: Read-only legacy kernel audit
+
+VERIFIED FACTS
+--------------
+Kernel source: Linux 4.9.205
+Architecture: ARM64
+Runtime configuration evidence: 9 options verified
+Source audit: Completed
+Project artifact verification: PASS (6 found, 0 missing)
+ZIP integrity audit: PASS
+Symlink audit: PASS
+
+LIMITATIONS
+-----------
+Audit results do not establish successful compilation,
+external feature compatibility, or device boot compatibility.
+
+AUDIT SCOPE
+-----------
+Read-only inspection and documentation.
+- kprobes_evidence_matrix.txt - ARM64 Kprobes evidence matrix

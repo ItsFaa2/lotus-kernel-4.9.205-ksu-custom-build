@@ -1,0 +1,65 @@
+# ============================================================
+# Public backup exclusions
+# ============================================================
+
+# Private/test signing keys
+**/certs/ko_test_prvk.pem
+
+# Python runtime/cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Kernel build transient files
+**/.tmp_versions/
+**/.cache/
+**/.tmp/
+*.o
+*.a
+*.cmd
+*.d
+*.gcno
+*.order
+*.symvers
+*.symversions
+*.mod
+*.mod.c
+*.ko
+*.lds
+
+# Kernel build temporary vmlinux objects
+**/.tmp_vmlinux*
+**/vmlinux.o
+
+# Nested Git metadata
+**/.git/
+
+# Local editor/runtime noise
+*.swp
+*.swo
+*~
+
+# Kernel generated transient files
+build/**/.tmp*
+build/**/*.tmp
+build/**/*.d
+build/**/*.cmd
+build/**/*.gcno
+build/**/*.order
+build/**/*.symvers
+build/**/*.symversions
+build/**/*.mod
+build/**/*.mod.c
+
+# Generated dependency/preprocessor scratch files
+build/**/*.d.pre.tmp
+build/**/*.d.dtc.tmp
+build/**/*.dts.tmp
+
+# Generic temporary files
+*.tmp
+*.bak
+
+# Temporary local preservation of nested repository metadata
+.nested-git-backup/

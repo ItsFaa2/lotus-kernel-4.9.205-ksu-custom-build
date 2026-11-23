@@ -1,0 +1,130 @@
+
+$ make -C /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 O=/root/kernel-source/build/ksu-32915384-49 ARCH=arm64 LLVM=1 LLVM_IAS=1 CROSS_COMPILE_ARM32=arm-linux-gnueabihf- olddefconfig
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  GEN     ./Makefile
+scripts/kconfig/conf  --olddefconfig Kconfig
+#
+# configuration written to .config
+#
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+
+$ make -C /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 O=/root/kernel-source/build/ksu-32915384-49 ARCH=arm64 LLVM=1 LLVM_IAS=1 CROSS_COMPILE_ARM32=arm-linux-gnueabihf- -j2 vmlinux
+make: Entering directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'
+make[1]: Entering directory '/root/kernel-source/build/ksu-32915384-49'
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  Using /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15 as source for kernel
+  CHK     scripts/mod/devicetable-offsets.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/checksyscalls.sh
+  HOSTCC  usr/gen_init_cpio
+  CC      init/main.o
+  GEN     usr/initramfs_data.cpio.gz
+  AS      usr/initramfs_data.o
+  LD      usr/built-in.o
+  CC      arch/arm64/kernel/debug-monitors.o
+  AS      arch/arm64/kernel/entry.o
+  CC      arch/arm64/kernel/irq.o
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/do_mounts.o
+  CC      arch/arm64/kernel/fpsimd.o
+  AS      arch/arm64/kernel/entry-fpsimd.o
+  CC      arch/arm64/kernel/process.o
+  CC      init/do_mounts_rd.o
+  CC      arch/arm64/kernel/ptrace.o
+  CC      init/do_mounts_initrd.o
+  CC      init/do_mounts_dm.o
+  CC      init/noinitramfs.o
+  CC      arch/arm64/kernel/setup.o
+  CC      init/initramfs.o
+In file included from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/page.h:54,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mmzone.h:20,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/gfp.h:5,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/slab.h:14,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/resource_ext.h:19,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/acpi.h:26,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:20:
+In function ‘request_standard_resources’,
+    inlined from ‘setup_arch’ at /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:283:2:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:205:56: warning: array subscript -1 is outside array bounds of ‘char[]’ [-Warray-bounds]
+  205 |         kernel_code.end     = __pa_symbol(__init_begin - 1);
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/memory.h:106:41: note: in definition of macro ‘__virt_to_phys’
+  106 |         phys_addr_t __x = (phys_addr_t)(x);                             \
+      |                                         ^
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mm.h:72:25: note: in expansion of macro ‘__pa’
+   72 | #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
+      |                         ^~~~
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mm.h:72:30: note: in expansion of macro ‘RELOC_HIDE’
+   72 | #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
+      |                              ^~~~~~~~~~
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:205:31: note: in expansion of macro ‘__pa_symbol’
+  205 |         kernel_code.end     = __pa_symbol(__init_begin - 1);
+      |                               ^~~~~~~~~~~
+In file included from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/memblock.h:18,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:41:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mm.h: In function ‘setup_arch’:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mm.h:1855:21: note: at offset -1 into object ‘__init_begin’ of size [0, 9223372036854775807]
+ 1855 |         extern char __init_begin[], __init_end[];
+      |                     ^~~~~~~~~~~~
+In function ‘request_standard_resources’,
+    inlined from ‘setup_arch’ at /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:283:2:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:207:48: warning: array subscript -1 is outside array bounds of ‘char[]’ [-Warray-bounds]
+  207 |         kernel_data.end     = __pa_symbol(_end - 1);
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/memory.h:106:41: note: in definition of macro ‘__virt_to_phys’
+  106 |         phys_addr_t __x = (phys_addr_t)(x);                             \
+      |                                         ^
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mm.h:72:25: note: in expansion of macro ‘__pa’
+   72 | #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
+      |                         ^~~~
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mm.h:72:30: note: in expansion of macro ‘RELOC_HIDE’
+   72 | #define __pa_symbol(x)  __pa(RELOC_HIDE((unsigned long)(x), 0))
+      |                              ^~~~~~~~~~
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/setup.c:207:31: note: in expansion of macro ‘__pa_symbol’
+  207 |         kernel_data.end     = __pa_symbol(_end - 1);
+      |                               ^~~~~~~~~~~
+In file included from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/sections.h:19,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/virt.h:48,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/hw_breakpoint.h:22,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/processor.h:41,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/spinlock.h:21,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/spinlock.h:87,
+                 from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/linux/mmzone.h:7:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/asm-generic/sections.h: In function ‘setup_arch’:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/include/asm-generic/sections.h:39:13: note: at offset -1 into object ‘_end’ of size [0, 9223372036854775807]
+   39 | extern char _end[];
+      |             ^~~~
+  CC      arch/arm64/kernel/signal.o
+  CC      init/calibrate.o
+In file included from /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/signal.c:37:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/signal.c: In function ‘setup_return’:
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/vdso.h:37:18: error: ‘vdso_offset_sigtramp’ undeclared (first use in this function)
+   37 |         (void *)(vdso_offset_##name - VDSO_LBASE + (unsigned long)(base)); \
+      |                  ^~~~~~~~~~~~
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/signal.c:246:28: note: in expansion of macro ‘VDSO_SYMBOL’
+  246 |                 sigtramp = VDSO_SYMBOL(current->mm->context.vdso, sigtramp);
+      |                            ^~~~~~~~~~~
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/include/asm/vdso.h:37:18: note: each undeclared identifier is reported only once for each function it appears in
+   37 |         (void *)(vdso_offset_##name - VDSO_LBASE + (unsigned long)(base)); \
+      |                  ^~~~~~~~~~~~
+/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/arch/arm64/kernel/signal.c:246:28: note: in expansion of macro ‘VDSO_SYMBOL’
+  246 |                 sigtramp = VDSO_SYMBOL(current->mm->context.vdso, sigtramp);
+      |                            ^~~~~~~~~~~
+make[2]: *** [/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/scripts/Makefile.build:334: arch/arm64/kernel/signal.o] Error 1
+make[1]: *** [/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15/Makefile:1120: arch/arm64/kernel] Error 2
+make[1]: *** Waiting for unfinished jobs....
+  CC      init/init_task.o
+  CC      init/version.o
+  LD      init/mounts.o
+  LD      init/built-in.o
+make[1]: Leaving directory '/root/kernel-source/build/ksu-32915384-49'
+make: *** [Makefile:152: sub-make] Error 2
+make: Leaving directory '/root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15'

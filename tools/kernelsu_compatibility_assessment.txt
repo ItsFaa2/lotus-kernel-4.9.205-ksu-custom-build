@@ -1,0 +1,149 @@
+KERNEL FEATURES
+---------------
+CONFIG_MODULES          : y (VERIFIED)
+CONFIG_MODULE_UNLOAD    : y (VERIFIED)
+CONFIG_MODVERSIONS      : y (VERIFIED)
+CONFIG_KALLSYMS         : y (VERIFIED)
+CONFIG_KALLSYMS_ALL     : y (VERIFIED)
+CONFIG_KPROBES          : y (VERIFIED)
+CONFIG_SECURITY         : y (VERIFIED)
+CONFIG_SECURITY_SELINUX : y (VERIFIED)
+CONFIG_IKCONFIG         : y (VERIFIED)
+
+Evidence:
+ /root/lotus-running.config
+
+CONFIG SOURCE:
+Running kernel configuration.
+
+SOURCE AUDIT
+------------
+Kernel source version : 4.9.205
+VERSION               : 4
+PATCHLEVEL            : 9
+SUBLEVEL               : 205
+
+CONFIG_ANDROID_GKI references:
+Not found in searched directories:
+Documentation, arch, kernel, drivers.
+
+KPROBES references:
+Found in kernel/, include/, arch/arm64/.
+
+MODULES references:
+Found in kernel/, include/, arch/arm64/.
+
+AUDIT NOTES
+-----------
+- Source is based on Linux 4.9.205.
+- No CONFIG_ANDROID_GKI reference was found by the search.
+- Kprobes and module-related source references exist.
+- Source references alone do not establish runtime compatibility.
+- Missing GKI references do not independently prove GKI status.
+
+UPSTREAM DOCUMENTATION REVIEW
+-----------------------------
+KernelSU repository:
+https://github.com/tiann/KernelSU
+
+KernelSU build guide:
+https://kernelsu.org/guide/how-to-build.html
+
+Android kernel build:
+https://source.android.com/docs/setup/build/building-kernels?hl=id
+
+GKI release builds:
+https://source.android.com/docs/core/architecture/kernel/gki-release-builds?hl=id
+
+UPSTREAM SUPPORT FINDINGS
+-------------------------
+Official GKI support: 5.10+
+Official older kernel support: 4.14+
+Project kernel: 4.9.205
+
+Compatibility status:
+BELOW OFFICIAL SUPPORT RANGE
+
+Build guide status:
+ARCHIVAL REFERENCE
+
+GKI documentation applicability:
+NOT DIRECTLY APPLICABLE
+
+Conclusion:
+Official upstream documentation does not establish
+support for this project's Linux 4.9.205 kernel.
+
+This does not prove technical impossibility.
+Community modifications or compatibility have not
+been evaluated or verified.
+NON-GKI DOCUMENTATION REVIEW
+----------------------------
+Document: Integrate for non-GKI devices
+Document status: ARCHIVAL
+
+Historical version reference: v0.9.5
+Official non-GKI support since v1.0: DROPPED
+
+Documented Kprobe-related symbols:
+CONFIG_KPROBES
+CONFIG_HAVE_KPROBES
+CONFIG_KPROBE_EVENTS
+
+Existing evidence:
+CONFIG_KPROBES          : y
+CONFIG_HAVE_KPROBES     : NOT VERIFIED
+CONFIG_KPROBE_EVENTS    : NOT VERIFIED
+
+Kprobe reliability:
+NOT VERIFIED
+
+CURRENT UPSTREAM SUPPORT
+------------------------
+Minimum older kernel version: 4.14
+Project kernel: 4.9.205
+Official support: OUTSIDE SUPPORTED RANGE
+
+ASSESSMENT
+----------
+Historical documentation exists for non-GKI kernels.
+Current official compatibility is not established.
+Kprobe runtime reliability remains unverified.
+KPROBES CONFIGURATION EVIDENCE
+------------------------------
+Running kernel:
+CONFIG_KPROBES          : y
+CONFIG_HAVE_KPROBES     : y
+CONFIG_KPROBE_EVENTS    : NOT DECLARED
+
+certus_defconfig:
+CONFIG_KPROBES          : y
+CONFIG_HAVE_KPROBES     : NOT DECLARED
+CONFIG_KPROBE_EVENTS    : NOT DECLARED
+
+Evidence source:
+ /root/lotus-running.config
+ arch/arm64/configs/certus_defconfig
+
+Kprobe configuration:
+PARTIALLY VERIFIED
+
+Kprobe runtime reliability:
+NOT VERIFIED
+
+AUDIT CORRECTION
+----------------
+Previous CONFIG_HAVE_KPROBES status:
+NOT VERIFIED
+
+Updated status from running config:
+CONFIG_HAVE_KPROBES=y (VERIFIED)
+
+This newer evidence supersedes the previous
+NOT VERIFIED entry.
+
+CONFIG_KPROBE_EVENTS:
+NOT DECLARED; effective status remains unknown.
+
+KPROBE RUNTIME RELIABILITY:
+NOT VERIFIED.

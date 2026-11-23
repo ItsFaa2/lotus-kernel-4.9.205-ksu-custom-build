@@ -1,0 +1,62 @@
+================================================================================
+FAA KSU PATCH MANIFEST
+================================================================================
+timestamp: 20261118-050601
+kernel: /root/kernel-source/work/kernel-4.9.205/android_kernel_xiaomi_mt6765-lotus-4.9.205_oss-certus-arm64-20240419-15
+ksu: /root/kernel-source/ksu-reference-32915384/kernel
+
+KSU commit:
+3291538446b7fccec46fa52775e6bf594c77b9f4
+
+MODIFIED:
+drivers/Makefile
+drivers/Kconfig
+
+ADDED:
+drivers/kernelsu/
+
+BACKUP:
+/root/kernel-source/build/ksu-patch-backup-20261118-050601
+
+SHA256 OF INTEGRATION FILES:
+4d955bcdc3325430c8bef6569381f404b235ac3a9b722c83a867c067003027c6  drivers/Makefile
+7f8311cd753c61166354cbd74795807c3ed8ef3280d16910421ee821055e8638  drivers/Kconfig
+
+KSU FILE COUNT:
+34
+
+KSU SOURCE FILES:
+drivers/kernelsu/.clang-format
+drivers/kernelsu/.clangd
+drivers/kernelsu/Kconfig
+drivers/kernelsu/LICENSE
+drivers/kernelsu/Makefile
+drivers/kernelsu/allowlist.c
+drivers/kernelsu/allowlist.h
+drivers/kernelsu/apk_sign.c
+drivers/kernelsu/apk_sign.h
+drivers/kernelsu/arch.h
+drivers/kernelsu/core_hook.c
+drivers/kernelsu/core_hook.h
+drivers/kernelsu/embed_ksud.c
+drivers/kernelsu/export_symbol.txt
+drivers/kernelsu/include/ksu_hook.h
+drivers/kernelsu/kernel_compat.c
+drivers/kernelsu/kernel_compat.h
+drivers/kernelsu/klog.h
+drivers/kernelsu/ksu.c
+drivers/kernelsu/ksu.h
+drivers/kernelsu/ksud.c
+drivers/kernelsu/ksud.h
+drivers/kernelsu/manager.c
+drivers/kernelsu/manager.h
+drivers/kernelsu/selinux/Makefile
+drivers/kernelsu/selinux/rules.c
+drivers/kernelsu/selinux/selinux.c
+drivers/kernelsu/selinux/selinux.h
+drivers/kernelsu/selinux/sepolicy.c
+drivers/kernelsu/selinux/sepolicy.h
+drivers/kernelsu/setup.sh
+drivers/kernelsu/sucompat.c
+drivers/kernelsu/uid_observer.c
+drivers/kernelsu/uid_observer.h
